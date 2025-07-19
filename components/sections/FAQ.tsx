@@ -72,25 +72,24 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="section-spacing bg-white">
-      <div className="container mx-auto container-padding">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <Badge
               variant="outline"
-              className="mb-6 text-blue-600 border-blue-200 px-4 py-2"
+              className="mb-4 sm:mb-6 text-blue-600 border-blue-200 px-3 sm:px-4 py-1 sm:py-2 text-sm"
             >
               Frequently Asked Questions
             </Badge>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-poppins text-gray-900 mb-6">
-              Common Questions About
-              <span className="gradient-text block sm:inline">
-                {" "}
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-poppins text-gray-900 mb-4 sm:mb-6 leading-tight">
+              Common Questions About{" "}
+              <span className="gradient-text">
                 Sigma Industrial Park Panipat
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed">
               Get answers to the most frequently asked questions about Sigma
               Industrial Park Panipat, plot booking, pricing, facilities, and
               investment opportunities.
@@ -98,42 +97,42 @@ export default function FAQ() {
           </div>
 
           {/* FAQ Items */}
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {faqs.map((faq, index) => {
               const isOpen = openItems.includes(index);
 
               return (
                 <Card
                   key={index}
-                  className="border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="w-full max-w-full border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
                 >
-                  <CardHeader className="pb-0">
+                  <CardHeader className="p-0">
                     <Button
                       variant="ghost"
                       onClick={() => toggleItem(index)}
-                      className="w-full justify-between text-left p-4 sm:p-6 h-auto hover:bg-transparent"
+                      className="w-full justify-between text-left p-4 sm:p-6 h-auto hover:bg-gray-50 rounded-none"
                     >
-                      <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                          <HelpCircle className="w-4 h-4 text-blue-600" />
+                      <div className="flex items-start gap-3 sm:gap-4 flex-1 min-w-0">
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1">
+                          <HelpCircle className="w-3 h-3 sm:w-4 sm:h-4 text-blue-600" />
                         </div>
-                        <CardTitle className="text-lg font-poppins text-gray-900 text-left leading-relaxed">
+                        <CardTitle className="text-sm sm:text-base lg:text-lg font-semibold font-poppins text-gray-900 text-left leading-relaxed pr-2 sm:pr-4">
                           {faq.question}
                         </CardTitle>
                       </div>
-                      <div className="flex-shrink-0 ml-2 sm:ml-4">
+                      <div className="flex-shrink-0">
                         {isOpen ? (
-                          <ChevronUp className="w-5 h-5 text-blue-600" />
+                          <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
                         ) : (
-                          <ChevronDown className="w-5 h-5 text-blue-600" />
+                          <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
                         )}
                       </div>
                     </Button>
                   </CardHeader>
 
                   {isOpen && (
-                    <CardContent className="pt-0 pb-6">
-                      <div className="ml-8 sm:ml-12 pr-4 sm:pr-12">
+                    <CardContent className="pt-0 pb-4 sm:pb-6">
+                      <div className="pl-14 pr-4 sm:pl-20 sm:pr-6">
                         <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                           {faq.answer}
                         </p>
@@ -146,17 +145,17 @@ export default function FAQ() {
           </div>
 
           {/* Contact CTA */}
-          <div className="text-center mt-16">
-            <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border-0 shadow-lg mx-4 sm:mx-0">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold font-poppins text-gray-900 mb-4">
+          <div className="text-center mt-12 sm:mt-16">
+            <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border-0 shadow-lg">
+              <CardContent className="p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold font-poppins text-gray-900 mb-3 sm:mb-4">
                   Still Have Questions?
                 </h3>
-                <p className="text-base text-gray-600 mb-6">
+                <p className="text-sm sm:text-base text-gray-600 mb-6">
                   Our expert team is here to help you with any queries about
                   Sigma Industrial Park Panipat
                 </p>
-                <div className="flex flex-col gap-4 justify-center">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md mx-auto">
                   <Button
                     onClick={() =>
                       window.open(
@@ -164,14 +163,14 @@ export default function FAQ() {
                         "_blank"
                       )
                     }
-                    className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl font-medium"
+                    className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl font-medium text-sm sm:text-base"
                   >
                     WhatsApp Support
                   </Button>
                   <Button
                     onClick={() => window.open("tel:+919138331357", "_self")}
                     variant="outline"
-                    className="border-blue-600 text-blue-600 hover:bg-blue-50 hover:border-blue-700 px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 font-medium"
+                    className="w-full sm:w-auto border-blue-600 text-blue-600 hover:bg-blue-50 hover:border-blue-700 px-6 sm:px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 font-medium text-sm sm:text-base"
                   >
                     Call Expert
                   </Button>
