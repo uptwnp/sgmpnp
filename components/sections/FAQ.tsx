@@ -133,8 +133,8 @@ export default function FAQ() {
                   </CardHeader>
 
                   {isOpen && (
-                    <CardContent className="pt-0 pb-4 sm:pb-6">
-                      <div className="p-4">
+                    <CardContent className="pt-0 pb-4">
+                      <div className="p-2">
                         <p className="text-sm sm:text-base text-gray-600 leading-relaxed whitespace-pre-wrap">
                           {faq.answer}
                         </p>
