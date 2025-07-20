@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
 
 export default function FAQ() {
-  const [openItems, setOpenItems] = useState<number[]>([0]); // First item open by default
+  const [openItems, setOpenItems] = useState<number[]>([0]);
 
   const toggleItem = (index: number) => {
     setOpenItems((prev) =>
@@ -104,7 +104,7 @@ export default function FAQ() {
               return (
                 <Card
                   key={index}
-                  className="w-full max-w-full border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
+                  className="w-full border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
                 >
                   <CardHeader className="p-0">
                     <Button
@@ -113,12 +113,14 @@ export default function FAQ() {
                       className="w-full justify-between text-left p-4 sm:p-6 h-auto hover:bg-gray-50 rounded-none"
                     >
                       <div className="flex items-start gap-3 sm:gap-4 flex-1 min-w-0">
-                        <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1">
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                           <HelpCircle className="w-3 h-3 sm:w-4 sm:h-4 text-blue-600" />
                         </div>
-                        <CardTitle className="text-sm sm:text-base lg:text-lg font-semibold font-poppins text-gray-900 text-left leading-relaxed pr-2 sm:pr-4">
-                          {faq.question}
-                        </CardTitle>
+                        <div className="flex-1 min-w-0">
+                          <CardTitle className="text-sm sm:text-base lg:text-lg font-semibold font-poppins text-gray-900 text-left leading-relaxed break-words whitespace-normal">
+                            {faq.question}
+                          </CardTitle>
+                        </div>
                       </div>
                       <div className="flex-shrink-0">
                         {isOpen ? (
@@ -133,7 +135,7 @@ export default function FAQ() {
                   {isOpen && (
                     <CardContent className="pt-0 pb-4 sm:pb-6">
                       <div className="pl-14 pr-4 sm:pl-20 sm:pr-6">
-                        <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                        <p className="text-sm sm:text-base text-gray-600 leading-relaxed whitespace-pre-wrap">
                           {faq.answer}
                         </p>
                       </div>
@@ -144,7 +146,7 @@ export default function FAQ() {
             })}
           </div>
 
-          {/* Contact CTA */}
+          {/* CTA */}
           <div className="text-center mt-12 sm:mt-16">
             <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border-0 shadow-lg">
               <CardContent className="p-6 sm:p-8">
